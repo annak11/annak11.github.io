@@ -41,7 +41,21 @@ a.open-content:hover {
  text-shadow: 0 0 0 #fff;
 }
 		</style>
-
+<script>
+ var lastOpen;
+ function collapsElement(id) {
+ if ( document.getElementById(id).style.display != "none" ) {
+ document.getElementById(id).style.display = 'none';
+ }
+ else {
+ if(lastOpen !== undefined) {
+ lastOpen.style.display = 'none';
+ }
+ lastOpen = document.getElementById(id);
+ document.getElementById(id).style.display = '';
+ }
+ }
+ </script>
     <body>
         <center>
           <table width="750px" height="300px" noborder nopadding> 
